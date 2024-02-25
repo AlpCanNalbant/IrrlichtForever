@@ -1,0 +1,6 @@
+[submodule "deps/magic_enum"]
+	path = deps/MagicEnum/magic_enum
+	url = https://github.com/Neargye/magic_enum.git
+[submodule "deps/PazuResource"]
+	path = deps/PazuResource
+	url = https://github.com/AlpCanNalbant/PazuResource.git

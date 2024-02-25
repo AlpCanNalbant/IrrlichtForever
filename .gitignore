@@ -1,0 +1,11 @@
+# Ignore directories.
+temp/
+outputs/
+
+# Ignore files.
+ResourceGenerator.exe
+ResourceGenerator.log
+ResourceList.txt
+Map20kdm2.pk3
+Ninja.b3d
+NinjaDiff.jpg

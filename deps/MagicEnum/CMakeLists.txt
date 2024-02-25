@@ -1,0 +1,3 @@
+project(MagicEnum LANGUAGES CXX)
+
+set(MAGIC_ENUM_INCLUDE_DIRS "${CMAKE_CURRENT_SOURCE_DIR}/magic_enum/include" PARENT_SCOPE)

@@ -1,0 +1,141 @@
+{
+	"version": "2.0.0",
+	"tasks": [
+		{
+			"label": "Run 'Debug': Sample",
+			"group": "build",
+			"windows": {
+				"options": {
+					"cwd": "${workspaceFolder}\\outputs\\bin\\Debug"
+				},
+				"command": "Sample.exe"
+			}
+		},
+		{
+			"label": "Run 'Release': Sample",
+			"group": "build",
+			"windows": {
+				"options": {
+					"cwd": "${workspaceFolder}\\outputs\\bin\\Release"
+				},
+				"command": "Sample.exe"
+			}
+		},
+		{
+			"label": "Run-&-Build 'Debug': Sample",
+			"group": "build",
+			"dependsOrder": "sequence",
+			"dependsOn": [
+				"Build 'Debug': Sample",
+				"Run 'Debug': Sample"
+			]
+		},
+		{
+			"label": "Run-&-Build 'Release': Sample",
+			"group": "build",
+			"dependsOrder": "sequence",
+			"dependsOn": [
+				"Build 'Release': Sample",
+				"Run 'Release': Sample"
+			]
+		},
+		{
+			"label": "Run-&-Rebuild 'Debug': Sample",
+			"group": "build",
+			"dependsOrder": "sequence",
+			"dependsOn": [
+				"Rebuild 'Debug': Sample",
+				"Run 'Debug': Sample"
+			]
+		},
+		{
+			"label": "Run-&-Rebuild 'Release': Sample",
+			"group": "build",
+			"dependsOrder": "sequence",
+			"dependsOn": [
+				"Rebuild 'Release': Sample",
+				"Run 'Release': Sample"
+			]
+		},
+		{
+			"label": "Rebuild 'Debug': Sample",
+			"group": "build",
+			"windows": {
+				"options": {
+					"cwd": "${workspaceFolder}\\commands"
+				},
+				"command": "RebuildDebug.bat"
+			},
+			"problemMatcher": "$gcc"
+		},
+		{
+			"label": "Rebuild 'Release': Sample",
+			"group": "build",
+			"windows": {
+				"options": {
+					"cwd": "${workspaceFolder}\\commands"
+				},
+				"command": "RebuildRelease.bat"
+			},
+			"problemMatcher": "$gcc"
+		},
+		{
+			"label": "Build 'Debug': Sample",
+			"group": {
+				"kind": "build",
+				"isDefault": true
+			},
+			"windows": {
+				"options": {
+					"cwd": "${workspaceFolder}\\commands"
+				},
+				"command": "BuildDebug.bat"
+			},
+			"problemMatcher": "$gcc"
+		},
+		{
+			"label": "Build 'Release': Sample",
+			"group": "build",
+			"windows": {
+				"options": {
+					"cwd": "${workspaceFolder}\\commands"
+				},
+				"command": "BuildRelease.bat"
+			},
+			"problemMatcher": "$gcc"
+		},
+		{
+			"label": "Clean 'Debug': Sample",
+			"group": "build",
+			"windows": {
+				"options": {
+					"cwd": "${workspaceFolder}\\commands"
+				},
+				"command": "CleanDebug.bat"
+			},
+			"problemMatcher": []
+		},
+		{
+			"label": "Clean 'Release': Sample",
+			"group": "build",
+			"windows": {
+				"options": {
+					"cwd": "${workspaceFolder}\\commands"
+				},
+				"command": "CleanRelease.bat"
+			},
+			"problemMatcher": []
+		},
+		{
+			"label": "Run: CMake-GUI",
+			"group": "none",
+			"windows": {
+				"options": {
+					"cwd": "${workspaceFolder}\\commands"
+				},
+				"command": "RunCMakeGUI.bat"
+			},
+			"problemMatcher": []
+		}
+	]
+}
