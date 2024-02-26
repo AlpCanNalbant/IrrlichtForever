@@ -52,7 +52,7 @@ namespace Irr
 	Pointer<T>::Pointer(Pointer<U> &&other, T *ptr) noexcept
 		: ptr_{ptr}
 	{
-		IRR_FOREVER_ASSERT_IF(other.ptr_ != static_cast<void *>(ptr) && "Irr::Pointer::Pointer(Pointer<U> &&other, T *ptr) Only call in the typical use cases where 'ptr' is a member of the object managed by 'other'.")
+		IRR_FOREVER_ASSERT_IF(other.ptr_ != static_cast<void *>(ptr) && "Irr::Pointer::Pointer(Pointer<U> &&other, T *ptr) Only call in the typical use cases where 'ptr' is a member of the object managed by 'other'.");
 		other.ptr_ = nullptr;
 	}
 
