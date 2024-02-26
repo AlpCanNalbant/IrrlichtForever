@@ -1,86 +1,11 @@
 {
 	"version": "2.0.0",
 	"tasks": [
+        // <<< ------------------------- >>>
+        // <<< Tasks of the GCC Compiler >>>
+        // <<< ------------------------- >>>
 		{
-			"label": "Run 'Debug': Sample",
-			"group": "build",
-			"windows": {
-				"options": {
-					"cwd": "${workspaceFolder}\\outputs\\bin\\Debug"
-				},
-				"command": "Sample.exe"
-			}
-		},
-		{
-			"label": "Run 'Release': Sample",
-			"group": "build",
-			"windows": {
-				"options": {
-					"cwd": "${workspaceFolder}\\outputs\\bin\\Release"
-				},
-				"command": "Sample.exe"
-			}
-		},
-		{
-			"label": "Run-&-Build 'Debug': Sample",
-			"group": "build",
-			"dependsOrder": "sequence",
-			"dependsOn": [
-				"Build 'Debug': Sample",
-				"Run 'Debug': Sample"
-			]
-		},
-		{
-			"label": "Run-&-Build 'Release': Sample",
-			"group": "build",
-			"dependsOrder": "sequence",
-			"dependsOn": [
-				"Build 'Release': Sample",
-				"Run 'Release': Sample"
-			]
-		},
-		{
-			"label": "Run-&-Rebuild 'Debug': Sample",
-			"group": "build",
-			"dependsOrder": "sequence",
-			"dependsOn": [
-				"Rebuild 'Debug': Sample",
-				"Run 'Debug': Sample"
-			]
-		},
-		{
-			"label": "Run-&-Rebuild 'Release': Sample",
-			"group": "build",
-			"dependsOrder": "sequence",
-			"dependsOn": [
-				"Rebuild 'Release': Sample",
-				"Run 'Release': Sample"
-			]
-		},
-		{
-			"label": "Rebuild 'Debug': Sample",
-			"group": "build",
-			"windows": {
-				"options": {
-					"cwd": "${workspaceFolder}\\commands"
-				},
-				"command": "RebuildDebug.bat"
-			},
-			"problemMatcher": "$gcc"
-		},
-		{
-			"label": "Rebuild 'Release': Sample",
-			"group": "build",
-			"windows": {
-				"options": {
-					"cwd": "${workspaceFolder}\\commands"
-				},
-				"command": "RebuildRelease.bat"
-			},
-			"problemMatcher": "$gcc"
-		},
-		{
-			"label": "Build 'Debug': Sample",
+			"label": "Build 'GCC-Debug': Sample",
 			"group": {
 				"kind": "build",
 				"isDefault": true
@@ -89,52 +14,431 @@
 				"options": {
 					"cwd": "${workspaceFolder}\\commands"
 				},
-				"command": "BuildDebug.bat"
+				"command": "Builder.bat"
 			},
+			"args": [
+				"Sample",
+				"Build",
+				"GCC",
+				"Debug"
+			],
 			"problemMatcher": "$gcc"
 		},
 		{
-			"label": "Build 'Release': Sample",
+			"label": "Build 'GCC-Release': Sample",
 			"group": "build",
 			"windows": {
 				"options": {
 					"cwd": "${workspaceFolder}\\commands"
 				},
-				"command": "BuildRelease.bat"
+				"command": "Builder.bat"
 			},
+			"args": [
+				"Sample",
+				"Build",
+				"GCC",
+				"Release"
+			],
 			"problemMatcher": "$gcc"
 		},
 		{
-			"label": "Clean 'Debug': Sample",
+			"label": "Clean 'GCC-Debug': Sample",
 			"group": "build",
 			"windows": {
 				"options": {
 					"cwd": "${workspaceFolder}\\commands"
 				},
-				"command": "CleanDebug.bat"
+				"command": "Builder.bat"
 			},
+			"args": [
+				"Sample",
+				"Clean",
+				"GCC",
+				"Debug"
+			],
 			"problemMatcher": []
 		},
 		{
-			"label": "Clean 'Release': Sample",
+			"label": "Clean 'GCC-Release': Sample",
 			"group": "build",
 			"windows": {
 				"options": {
 					"cwd": "${workspaceFolder}\\commands"
 				},
-				"command": "CleanRelease.bat"
+				"command": "Builder.bat"
 			},
+			"args": [
+				"Sample",
+				"Clean",
+				"GCC",
+				"Release"
+			],
 			"problemMatcher": []
 		},
 		{
-			"label": "Run: CMake-GUI",
-			"group": "none",
+			"label": "Rebuild 'GCC-Debug': Sample",
+			"group": "build",
 			"windows": {
 				"options": {
 					"cwd": "${workspaceFolder}\\commands"
 				},
-				"command": "RunCMakeGUI.bat"
+				"command": "Builder.bat"
 			},
+			"args": [
+				"Sample",
+				"Rebuild",
+				"GCC",
+				"Debug"
+			],
+			"problemMatcher": "$gcc"
+		},
+		{
+			"label": "Rebuild 'GCC-Release': Sample",
+			"group": "build",
+			"windows": {
+				"options": {
+					"cwd": "${workspaceFolder}\\commands"
+				},
+				"command": "Builder.bat"
+			},
+			"args": [
+				"Sample",
+				"Rebuild",
+				"GCC",
+				"Release"
+			],
+			"problemMatcher": "$gcc"
+		},
+		{
+			"label": "Run 'GCC-Debug': Sample",
+			"group": "build",
+			"windows": {
+				"options": {
+					"cwd": "${workspaceFolder}\\commands"
+				},
+				"command": "Builder.bat"
+			},
+			"args": [
+				"Sample",
+				"Run",
+				"GCC",
+				"Debug",
+				"Project"
+			],
+			"problemMatcher": []
+		},
+		{
+			"label": "Run 'GCC-Release': Sample",
+			"group": "build",
+			"windows": {
+				"options": {
+					"cwd": "${workspaceFolder}\\commands"
+				},
+				"command": "Builder.bat"
+			},
+			"args": [
+				"Sample",
+				"Run",
+				"GCC",
+				"Release",
+				"Project"
+			],
+			"problemMatcher": []
+		},
+		{
+			"label": "Run-&-Build 'GCC-Debug': Sample",
+			"group": "build",
+			"dependsOrder": "sequence",
+			"dependsOn": [
+				"Build 'GCC-Debug': Sample",
+				"Run 'GCC-Debug': Sample"
+			],
+			"problemMatcher": []
+		},
+		{
+			"label": "Run-&-Build 'GCC-Release': Sample",
+			"group": "build",
+			"dependsOrder": "sequence",
+			"dependsOn": [
+				"Build 'GCC-Release': Sample",
+				"Run 'GCC-Release': Sample"
+			],
+			"problemMatcher": []
+		},
+		{
+			"label": "Run-&-Rebuild 'GCC-Debug': Sample",
+			"group": "build",
+			"dependsOrder": "sequence",
+			"dependsOn": [
+				"Rebuild 'GCC-Debug': Sample",
+				"Run 'GCC-Debug': Sample"
+			],
+			"problemMatcher": []
+		},
+		{
+			"label": "Run-&-Rebuild 'GCC-Release': Sample",
+			"group": "build",
+			"dependsOrder": "sequence",
+			"dependsOn": [
+				"Rebuild 'GCC-Release': Sample",
+				"Run 'GCC-Release': Sample"
+			],
+			"problemMatcher": []
+		},
+		{
+			"label": "Run 'GCC-Debug': CMake-GUI",
+			"group": "build",
+			"windows": {
+				"options": {
+					"cwd": "${workspaceFolder}\\commands"
+				},
+				"command": "Builder.bat"
+			},
+			"args": [
+				"Sample",
+				"Run",
+				"GCC",
+				"Debug",
+				"CMakeGUI"
+			],
+			"problemMatcher": []
+		},
+		{
+			"label": "Run 'GCC-Release': CMake-GUI",
+			"group": "build",
+			"windows": {
+				"options": {
+					"cwd": "${workspaceFolder}\\commands"
+				},
+				"command": "Builder.bat"
+			},
+			"args": [
+				"Sample",
+				"Run",
+				"GCC",
+				"Release",
+				"CMakeGUI"
+			],
+			"problemMatcher": []
+		},
+        // <<< --------------------------- >>>
+        // <<< Tasks of the Clang Compiler >>>
+        // <<< --------------------------- >>>
+		{
+			"label": "Build 'Clang-Debug': Sample",
+			"group": {
+				"kind": "build",
+				// "isDefault": true
+			},
+			"windows": {
+				"options": {
+					"cwd": "${workspaceFolder}\\commands"
+				},
+				"command": "Builder.bat"
+			},
+			"args": [
+				"Sample",
+				"Build",
+				"Clang",
+				"Debug"
+			],
+			"problemMatcher": "$gcc"
+		},
+		{
+			"label": "Build 'Clang-Release': Sample",
+			"group": "build",
+			"windows": {
+				"options": {
+					"cwd": "${workspaceFolder}\\commands"
+				},
+				"command": "Builder.bat"
+			},
+			"args": [
+				"Sample",
+				"Build",
+				"Clang",
+				"Release"
+			],
+			"problemMatcher": "$gcc"
+		},
+		{
+			"label": "Clean 'Clang-Debug': Sample",
+			"group": "build",
+			"windows": {
+				"options": {
+					"cwd": "${workspaceFolder}\\commands"
+				},
+				"command": "Builder.bat"
+			},
+			"args": [
+				"Sample",
+				"Clean",
+				"Clang",
+				"Debug"
+			],
+			"problemMatcher": []
+		},
+		{
+			"label": "Clean 'Clang-Release': Sample",
+			"group": "build",
+			"windows": {
+				"options": {
+					"cwd": "${workspaceFolder}\\commands"
+				},
+				"command": "Builder.bat"
+			},
+			"args": [
+				"Sample",
+				"Clean",
+				"Clang",
+				"Release"
+			],
+			"problemMatcher": []
+		},
+		{
+			"label": "Rebuild 'Clang-Debug': Sample",
+			"group": "build",
+			"windows": {
+				"options": {
+					"cwd": "${workspaceFolder}\\commands"
+				},
+				"command": "Builder.bat"
+			},
+			"args": [
+				"Sample",
+				"Rebuild",
+				"Clang",
+				"Debug"
+			],
+			"problemMatcher": "$gcc"
+		},
+		{
+			"label": "Rebuild 'Clang-Release': Sample",
+			"group": "build",
+			"windows": {
+				"options": {
+					"cwd": "${workspaceFolder}\\commands"
+				},
+				"command": "Builder.bat"
+			},
+			"args": [
+				"Sample",
+				"Rebuild",
+				"Clang",
+				"Release"
+			],
+			"problemMatcher": "$gcc"
+		},
+		{
+			"label": "Run 'Clang-Debug': Sample",
+			"group": "build",
+			"windows": {
+				"options": {
+					"cwd": "${workspaceFolder}\\commands"
+				},
+				"command": "Builder.bat"
+			},
+			"args": [
+				"Sample",
+				"Run",
+				"Clang",
+				"Debug",
+				"Project"
+			],
+			"problemMatcher": []
+		},
+		{
+			"label": "Run 'Clang-Release': Sample",
+			"group": "build",
+			"windows": {
+				"options": {
+					"cwd": "${workspaceFolder}\\commands"
+				},
+				"command": "Builder.bat"
+			},
+			"args": [
+				"Sample",
+				"Run",
+				"Clang",
+				"Release",
+				"Project"
+			],
+			"problemMatcher": []
+		},
+		{
+			"label": "Run-&-Build 'Clang-Debug': Sample",
+			"group": "build",
+			"dependsOrder": "sequence",
+			"dependsOn": [
+				"Build 'Clang-Debug': Sample",
+				"Run 'Clang-Debug': Sample"
+			],
+			"problemMatcher": []
+		},
+		{
+			"label": "Run-&-Build 'Clang-Release': Sample",
+			"group": "build",
+			"dependsOrder": "sequence",
+			"dependsOn": [
+				"Build 'Clang-Release': Sample",
+				"Run 'Clang-Release': Sample"
+			],
+			"problemMatcher": []
+		},
+		{
+			"label": "Run-&-Rebuild 'Clang-Debug': Sample",
+			"group": "build",
+			"dependsOrder": "sequence",
+			"dependsOn": [
+				"Rebuild 'Clang-Debug': Sample",
+				"Run 'Clang-Debug': Sample"
+			],
+			"problemMatcher": []
+		},
+		{
+			"label": "Run-&-Rebuild 'Clang-Release': Sample",
+			"group": "build",
+			"dependsOrder": "sequence",
+			"dependsOn": [
+				"Rebuild 'Clang-Release': Sample",
+				"Run 'Clang-Release': Sample"
+			],
+			"problemMatcher": []
+		},
+		{
+			"label": "Run 'Clang-Debug': CMake-GUI",
+			"group": "build",
+			"windows": {
+				"options": {
+					"cwd": "${workspaceFolder}\\commands"
+				},
+				"command": "Builder.bat"
+			},
+			"args": [
+				"Sample",
+				"Run",
+				"Clang",
+				"Debug",
+				"CMakeGUI"
+			],
+			"problemMatcher": []
+		},
+		{
+			"label": "Run 'Clang-Release': CMake-GUI",
+			"group": "build",
+			"windows": {
+				"options": {
+					"cwd": "${workspaceFolder}\\commands"
+				},
+				"command": "Builder.bat"
+			},
+			"args": [
+				"Sample",
+				"Run",
+				"Clang",
+				"Release",
+				"CMakeGUI"
+			],
 			"problemMatcher": []
 		}
 	]
