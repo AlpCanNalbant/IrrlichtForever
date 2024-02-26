@@ -14,10 +14,12 @@
 				"UNICODE",
 				"_UNICODE"
 			],
-			"compilerPath": "C:\\msys64\\mingw64\\bin\\c++.exe",
+			// "compilerPath": "C:\\msys64\\clang64\\bin\\x86_64-w64-mingw32-c++.exe", // MinGW-Clang compiler.
+			"compilerPath": "C:\\msys64\\mingw64\\bin\\x86_64-w64-mingw32-c++.exe", // MinGW-GCC compiler.
 			"cStandard": "${default}",
 			"cppStandard": "c++23",
-			"intelliSenseMode": "windows-gcc-x64"
+			// "intelliSenseMode": "windows-clang-x64", // MinGW-Clang compiler.
+			"intelliSenseMode": "windows-gcc-x64" // MinGW-GCC compiler.
 		}
 	],
 	"version": 4
