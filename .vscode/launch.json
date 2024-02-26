@@ -1,18 +1,23 @@
 {
 	"version": "0.2.0",
 	"configurations": [
+	    // <<< ----------------------------- >>>
+        // <<< Launchers of the GDB Debugger >>>
+        // <<< ----------------------------- >>>
 		{
 			"name": "Debug '(GDB)': Sample",
 			"type": "cppdbg",
 			"request": "launch",
-			"program": "${workspaceFolder}\\outputs\\bin\\Debug\\Sample.exe",
+			"windows": {
+				"program": "${workspaceFolder}\\outputs\\bin\\Windows\\mingw\\gcc\\Debug\\Sample.exe",
+				"miDebuggerPath": "C:\\msys64\\mingw64\\bin\\gdb.exe"
+			},
 			"args": [],
 			"stopAtEntry": false,
-			"cwd": "${fileDirname}",
+			"cwd": "${workspaceFolder}",
 			"environment": [],
 			"externalConsole": false,
 			"MIMode": "gdb",
-			"miDebuggerPath": "C:\\msys64\\mingw64\\bin\\gdb.exe",
 			"setupCommands": [
 				{
 					"description": "Enable pretty-printing for gdb",
@@ -30,14 +35,16 @@
 			"name": "Debug-&-Build '(GDB)': Sample",
 			"type": "cppdbg",
 			"request": "launch",
-			"program": "${workspaceFolder}\\outputs\\bin\\Debug\\Sample.exe",
+			"windows": {
+				"program": "${workspaceFolder}\\outputs\\bin\\Windows\\mingw\\gcc\\Debug\\Sample.exe",
+				"miDebuggerPath": "C:\\msys64\\mingw64\\bin\\gdb.exe"
+			},
 			"args": [],
 			"stopAtEntry": false,
-			"cwd": "${fileDirname}",
+			"cwd": "${workspaceFolder}",
 			"environment": [],
 			"externalConsole": false,
 			"MIMode": "gdb",
-			"miDebuggerPath": "C:\\msys64\\mingw64\\bin\\gdb.exe",
 			"setupCommands": [
 				{
 					"description": "Enable pretty-printing for gdb",
@@ -50,22 +57,29 @@
 					"ignoreFailures": true
 				}
 			],
-			"preLaunchTask": "Build 'Debug': Sample"
+			"preLaunchTask": "Build 'GCC-Debug': Sample"
 		},
+	    // <<< ------------------------------ >>>
+        // <<< Launchers of the LLDB Debugger >>>
+        // <<< ------------------------------ >>>
 		{
 			"name": "Debug '(LLDB)': Sample",
 			"type": "lldb",
 			"request": "launch",
-			"program": "${workspaceFolder}\\outputs\\bin\\Debug\\Sample.exe",
+			"windows": {
+				"program": "${workspaceFolder}\\outputs\\bin\\Windows\\mingw\\clang\\Debug\\Sample.exe",
+			},
 			"args": []
 		},
 		{
 			"name": "Debug-&-Build '(LLDB)': Sample",
 			"type": "lldb",
 			"request": "launch",
-			"program": "${workspaceFolder}\\outputs\\bin\\Debug\\Sample.exe",
+			"windows": {
+				"program": "${workspaceFolder}\\outputs\\bin\\Windows\\mingw\\clang\\Debug\\Sample.exe",
+			},
 			"args": [],
-			"preLaunchTask": "Build 'Debug': Sample"
+			"preLaunchTask": "Build 'Clang-Debug': Sample"
 		}
 	]
 }
